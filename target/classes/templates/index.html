@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QuietMelody</title>
+    <style>
+        body {
+            background: #edeef0;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+<body>
+<header th:insert="fragments/navbar.html" id="header">
+</header>
+
+
+<div class="intro" id="intro">
+    <div class="container">
+        <div class="intro__inner">
+            <img src="img/kk.png" width="300" alt="альтернативный текст">
+            <h2 class="intro__subtitle">QuietMelody - гитары со всего мира<br/>
+                Быстро, качественно, надёжно.</h2>
+            <a class="btn  btn--red" href="catalog.html">Наш каталог</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" id="features">
+    <div class="features">
+        <div class="features__item">
+            <img class="features__icon" src="img/features/feat_one.svg" width="60" alt="">
+            <h4 class="features__title">Сервис</h4>
+            <div class="features__text">Все инструменты проверены, отстроены и доведены до идеала!</div>
+        </div>
+
+        <div class="features__item">
+            <img class="features__icon" src="img/features/feat_two.svg" width="60" alt="">
+            <h4 class="features__title">Гарантия</h4>
+            <div class="features__text">Увеличенные сроки гарантии на наши гитары до 5 лет.</div>
+        </div>
+
+        <div class="features__item">
+            <img class="features__icon" src="img/features/feat_3.svg" width="60" alt="">
+            <h4 class="features__title">Возврат</h4>
+            <div class="features__text">Не понравился товар? Вернем или обменяем в течение 14-ти дней.</div>
+        </div>
+
+        <div class="features__item">
+            <img class="features__icon" src="img/features/feat_4.svg" width="60" alt="">
+            <h4 class="features__title">Доставка в любую точку мира</h4>
+            <div class="features__text">Расстояние не имеет значения! Где бы вы ни находились, вы получите свой заказ!</div>
+        </div>
+
+        <div class="features__item">
+            <img class="features__icon" src="img/features/feat_5.svg" width="60" alt="">
+            <h4 class="features__title">Товары любимых брендов</h4>
+            <div class="features__text">Прямые поставки от известных производителей специально для вас!</div>
+        </div>
+
+        <div class="features__item">
+            <img class="features__icon" src="img/features/feat_6.svg" width="60" alt="">
+            <h4 class="features__title">Формула удобства</h4>
+            <div class="features__text">Выбирайте товар и совершайте покупки, не выходя из дома.​</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text">
+    <h1 align="center" style="color:#e6474a">Популярное</h1>
+</div>
+<div class="works" id="works">
+
+    <div class="works__item">
+        <img class="works__photo" src="" alt="">
+        <div class="works__content">
+            <div class="works__title">ГИТАРКА</div>
+            <div class="works__text">Описание гитарки!</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+        <img class="works__photo" src="" alt="">
+        <div class="works__content">
+            <div class="works__title">ГИТАРКА</div>
+            <div class="works__text">Описание гитарки!</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+        <img class="works__photo" src="" alt="">
+        <div class="works__content">
+            <div class="works__title">ГИТАРКА</div>
+            <div class="works__text">Описание гитарки!</div>
+        </div>
+    </div>
+
+    <div class="works__item">
+        <img class="works__photo" src="" alt="">
+        <div class="works__content">
+            <div class="works__title">ГИТАРКА</div>
+            <div class="works__text">Описание гитарки!</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text"><h1 align="center" style="color:#e6474a">Команда</h1></div>
+<div class="team" id="team">
+    <div class="container">
+
+        <div class="team__inner">
+            <div class="team__item">
+                <img class="team__photo" src="img/team/team-11.jpg" alt="">
+                <div class="team__name">Орлова Ирина</div>
+                <div class="team__prof">Системный Администратор</div>
+                <div class="team__text">
+                    <p>Следит за состоянием сайта и исправляет ошибки в нём.</p>
+
+                </div>
+            </div>
+
+            <div class="team__item">
+                <img class="team__photo" src="img/team/team-22.jpg" alt="">
+                <div class="team__name">Иванов Владимир</div>
+                <div class="team__prof">Ген. Директор</div>
+                <div class="team__text">
+                    <p>Создатель и руководитель QuietMelody. Придумывает идеи и помогает воплощать их в жизнь специально для вас! </p>
+
+                </div>
+            </div>
+
+            <div class="team__item">
+                <img class="team__photo" src="img/team/team-33.jpg" alt="">
+                <div class="team__name">Лебедева Виктория</div>
+                <div class="team__prof">Мастер</div>
+                <div class="team__text">
+                    <p>Работает в мастерской. Чинит и настраивает гитары</p>
+
+                </div>
+            </div>
+
+            <div class="team__item">
+                <img class="team__photo" src="img/team/team-44.jpg" alt="">
+                <div class="team__name">Туманова Екатерина</div>
+                <div class="team__prof">Менеджер</div>
+                <div class="team__text">
+                    <p>По всем вопросам, включающих в себя сотрудничество и рекламу, стоит обращаться к ней.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text"><h1 align="center" style="color:#e6474a">Отзывы</h1></div>
+<div class="reviews" id="reviews">
+
+    <div class="container">
+        <div class="reviews__slider" id="reviewsSlider">
+            <div class="slick-item">
+                <div class="reviews__item">
+                    <div class="reviews__photo">
+                        <img class="reviews__img" src="img/reviews/otz11.jpg" alt="">
+                    </div>
+                    <div class="reviews__content">
+                        <div class="reviews__text">“Динамический отзыв”</div>
+                        <div class="reviews__author">Лобова Екатерина </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slick-item">
+                <div class="reviews__item">
+                    <div class="reviews__photo">
+                        <img class="reviews__img" src="img/reviews/otz22.jpg" alt="">
+                    </div>
+                    <div class="reviews__content">
+                        <div class="reviews__text">“Динамический отзыв”</div>
+                        <div class="reviews__author">Виноградова Славяна</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="download" id="download">
+    <div class="container">
+        <h3 class="download__title">Вы заинтересованы? </h3>
+        <div class="download__text">
+            <p>Самое время посмотреть на наши предложения для вас!</p>
+        </div>
+        <a class="btn  btn--red  btn--long" href="catalog.html">Каталог</a>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer__inner">
+            <div class="footer__block">
+                <h4 class="footer__title">Контакты</h4>
+                <address class="footer__address">
+                    <div>г.Москва</div>
+                    <div>Проспект Вернадского, 78</div>
+                </address>
+            </div>
+
+            <div class="footer__block">
+                <h4 class="footer__title">Проект по предмету Системная и программная инженерия</br></h4>
+            </div>
+
+            <div class="footer__block">
+                <h4 class="footer__title">QuietMelody</h4>
+                <div class="footer__text">
+                    <p>Это не простой магазин гитар, тут вы можете гитары со всего мира!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="copyright__text">
+                <div>Made <span>by Bremens Musicians</span></div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<div ID = "toTop" > ^ Наверх </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<nav th:fragment="navbar" class="nav" id="nav">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">
+                <img src="img/logo.png" width="230" alt="">
+            </div>
+
+
+                <a class="nav__link" href="#">Главная</a>
+                <a class="nav__link" href="catalog.html">Каталог</a>
+                <a class="nav__link" href="Workshop.html">Мастерская</a>
+                <a class="nav__link" href="#">О нас</a>
+                <a sec:authorize="isAuthenticated()"><a sec:authentication="principal.username"></a></a>
+                <a sec:authorize="isAuthenticated()"><a class="nav__link" th:href="@{/logout}">Выйти</a></a>
+                <a sec:authorize="!isAuthenticated()"><a class="nav__link" th:href="@{/login}">Войти</a></a>
+                <button class="burger" type="button" id="navToggle">
+                <span class="burger__item">Меню</span>
+                </button>
+
+</nav>
