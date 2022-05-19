@@ -2,25 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <meta charset="UTF-8">
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QuietMelody</title>
-    <style>
-        body {
-            background: #edeef0;
-        }
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div th:insert="fragments/imports.html"/>
 </head>
 <body>
-<header th:insert="fragments/navbar.html" id="header">
-</header>
+<header th:insert="fragments/navbar.html" id="header"/>
 
 
 <div class="intro" id="intro">
@@ -207,42 +195,7 @@
     </div>
 </div>
 
-
-<footer class="footer">
-    <div class="container">
-
-        <div class="footer__inner">
-            <div class="footer__block">
-                <h4 class="footer__title">Контакты</h4>
-                <address class="footer__address">
-                    <div>г.Москва</div>
-                    <div>Проспект Вернадского, 78</div>
-                </address>
-            </div>
-
-            <div class="footer__block">
-                <h4 class="footer__title">Проект по предмету Системная и программная инженерия</br></h4>
-            </div>
-
-            <div class="footer__block">
-                <h4 class="footer__title">QuietMelody</h4>
-                <div class="footer__text">
-                    <p>Это не простой магазин гитар, тут вы можете гитары со всего мира!</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        <div class="container">
-            <div class="copyright__text">
-                <div>Made <span>by Bremens Musicians</span></div>
-            </div>
-        </div>
-    </div>
-</footer>
-
+<footer th:insert="fragments/footer.html"/>
 
 <div ID = "toTop" > ^ Наверх </div>
 

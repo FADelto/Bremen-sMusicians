@@ -1,0 +1,39 @@
+.header__inner {
+    justify-content: space-between;
+    padding: 35px 0;
+    border-bottom: 1px solid #515369;
+}
+.nav {
+    font-size: 13px;
+    background: #31344e url("img/intro-bg2.png") center no-repeat;
+    text-transform: uppercase;
+}
+.nav-link {
+    margin-left: 50px;
+    color: #fff;
+    text-decoration: none;
+    opacity: .75;
+    transition: opacity .1s linear;
+}
+.nav-link:hover {
+    opacity: 1;
+}
+
+
+#toTop {
+    width:100px;
+    border:1px solid rgb(130, 146, 160);
+    background:rgb(36, 42, 70);
+    text-align:center;
+    padding:5px;
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    cursor:pointer;
+    display:none;
+    color:rgb(255, 255, 255);
+    font-family:verdana;
+    font-size:11px;
+    z-index: 1;
+}
+
