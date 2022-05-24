@@ -49,6 +49,7 @@ public class UserController {
     }
     @PostMapping
     public String userSave(
+            @RequestParam String username,
             @RequestParam String firstName,
             @RequestParam String secondName,
             @RequestParam String password,
@@ -58,8 +59,9 @@ public class UserController {
             @RequestParam("userId") User user
     ) /// Сохранение данных пользователя
     {
+        user.setUsername(username);
         user.setFirstName(firstName);
-        user.setFirstName(secondName);
+        user.setSecondName(secondName);
         user.setEmail(email);
         user.setPhone(phone);
         user.setPassword(password);

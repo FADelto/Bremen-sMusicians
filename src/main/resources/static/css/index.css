@@ -1,17 +1,6 @@
-.header__inner {
-    justify-content: space-between;
-    padding: 35px 0;
-    border-bottom: 1px solid #515369;
-}
-.nav {
-    font-size: 13px;
-    background: #31344e url("img/intro-bg2.png") center no-repeat;
-    text-transform: uppercase;
-}
-.nav-link {
+
+.nav-link.active {
     margin-left: 50px;
-    color: #fff;
-    text-decoration: none;
     opacity: .75;
     transition: opacity .1s linear;
 }
@@ -19,7 +8,38 @@
     opacity: 1;
 }
 
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 95px 0;
+}
 
+.features__item {
+    width: 33.33333%;
+    padding: 0 40px;
+    margin: 25px 0;
+
+    text-align: center;
+}
+
+.features__icon {
+    margin-bottom: 25px;
+}
+
+.features__title {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    color: #2d3033;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.features__text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #6c7279;
+}
 #toTop {
     width:100px;
     border:1px solid rgb(130, 146, 160);
