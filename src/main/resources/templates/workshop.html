@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <title>QuietMelody</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <div th:insert="fragments/imports.html"/>
+</head>
+
+<body>
+<header th:insert="fragments/navbar.html" id="header">
+</header>
+
+
+
+<div class="catalog__intro">
+  <h2 align="center">Какой ремонт гитар мы делаем</h2>
+</div>
+
+<!-- Catalog -->
+<div class="catalog">
+  <div class="container">
+    <div class="catalog__inner">
+
+      <div class="catalog__item">
+        <img class="catalog__photo" src="img/workshop/1.jpg" width = 100% alt="">
+        <div class="catalog__name">Работа со струнами</div>
+        <div class="catalog__description">
+          <p>- Замена ладов</p>
+          <p>- Отстройка по мензуре</p>
+          <p>- Выравнивание анкера</p>
+        </div>
+      </div>
+
+      <div class="catalog__item">
+        <img class="catalog__photo" src="img/workshop/2.jpg" width = 100% alt="">
+        <div class="catalog__name">Ремонт ладов</div>
+        <div class="catalog__description">
+          <p>- Замена ладов</p>
+          <p>- Выравнивание</p>
+          <p>- Полировка</p>
+        </div>
+      </div>
+
+      <div class="catalog__item">
+        <img class="catalog__photo" src="img/workshop/3.jpg" width = 100% alt="">
+        <div class="catalog__name">Электроника</div>
+        <div class="catalog__description">
+          <p>- Модификация электроники</p>
+          <p>- Замена звукоснимателей</p>
+          <p>- Ремонт проводки</p>
+        </div>
+      </div>
+
+      <div class="catalog__item">
+        <img class="catalog__photo" src="img/workshop/4.jpg" width = 100% alt="">
+        <div class="catalog__name">Элементы</div>
+        <div class="catalog__description">
+          <p>- Замена колков</p>
+          <p>- Изготовление накладок</p>
+          <p>- Косметические работы</p>
+        </div>
+      </div>
+
+      <div class="catalog__item">
+        <img class="catalog__photo" src="img/workshop/5.jpg" width = 100% alt="">
+        <div class="catalog__name">Кость и пластик</div>
+        <div class="catalog__description">
+          <p>- Замена порожков</p>
+          <p>- Замена сёдел</p>
+          <p>- Выравнивание высоты струн</p>
+        </div>
+      </div>
+
+      <div class="catalog__item">
+        <img class="catalog__photo" src="img/workshop/6.jpg" width = 100% alt="">
+        <div class="catalog__name">Конструкция</div>
+        <div class="catalog__description">
+          <p>- Порожки, изготовление</p>
+          <p>- Ремонт трещин</p>
+          <p>- Ремонт креплений</p>
+        </div>
+      </div>
+
+    </div><!-- /.catalog__inner -->
+  </div><!-- /.container -->
+</div><!-- /.catalog -->
+
+
+
+
+
+
+
+<footer th:insert="fragments/footer.html"/>
+
+
+<div ID = "toTop" > ^ Наверх </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

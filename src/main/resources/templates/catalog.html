@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Каталог</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <div th:insert="fragments/imports.html"/>
+</head>
+
+<body>
+    <header th:insert="fragments/navbar.html" id="header"></header>
+    <h1 style="margin-left: 8%; margin-top: 1%; color: #dc3545">Каталог</h1>
+    <h3 style="margin-left: 9%; margin-top: 1%; color: #dc3545">Сортировка</h3>
+    <ul class="nav" style="margin-left: 9%; margin-top: 1%; margin-bottom: 1%;">
+        <li class="nav-item" style="margin-right: 0.2%">
+            <a href="/catalog/ascendingprice" class="btn btn-danger"> По возрастанию цены</a>
+        </li>
+        <li class="nav-item">
+            <a href="/catalog/descendingprice" class="btn btn-danger"> По убыванию цены</a>
+        </li>
+    </ul>
+        <div style="margin-left: 9%; margin-right: 13%; min-height: 600px">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Цена</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody class="align-middle">
+                <tr th:each="product : ${products}">
+                    <td> <img th:src="${product.imgUrl}" style="height:100px;max-width:100px;"></td>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.description}"></td>
+                    <td th:text="${product.price} + ' руб.'"></td>
+                    <td><a th:href=@{'/catalog/'+${product.id}} class="btn btn-outline-danger">Добавить в корзину</a></td>
+
+                </tr>
+                </tbody>
+            </table>
+            <hr/>
+            <ul class="nav">
+                <li class="nav-item" th:each="i : ${#numbers.sequence(0,products.totalPages-1)}" style="margin-right: 0.2%">
+                    <a th:href="@{/catalog/(page=${i})}" th:text="${i}" class="btn btn-outline-danger" th:classappend="${currentPage}==${i}?'active':''"></a>
+                </li>
+            </ul>
+        </div>
+
+    <footer th:insert="fragments/footer.html"/>
+</body>
+</html>

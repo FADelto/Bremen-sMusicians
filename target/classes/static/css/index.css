@@ -1,3 +1,6 @@
+.navbg{
+    background: url("https://i.ibb.co/CskVxbZ/intro-bg2.jpg")
+}
 
 .nav-link.active {
     margin-left: 50px;
@@ -56,4 +59,3 @@
     font-size:11px;
     z-index: 1;
 }
-

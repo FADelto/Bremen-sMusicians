@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Каталог</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <div th:insert="fragments/imports.html"/>
+</head>
+
+<body>
+    <header th:insert="fragments/navbar.html" id="header"></header>
+    <h1 style="text-align: center; margin-top: 1%; color: #dc3545">Оплата заказа</h1>
+    <div class="card-details" style="align-items: center; margin-left: 25%; margin-right: 25%; margin-top: 5%; min-height: 500px">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="mb-3"><label class="form-label" for="card_holder">Имя владельца</label><input id="card_holder" class="form-control" type="text" placeholder="Card Holder" name="card_holder" /></div>
+            </div>
+            <div class="col-sm-5">
+                <div class="mb-3"><label class="form-label">Expiration date</label>
+                    <div class="input-group expiration-date"><input class="form-control" type="text" placeholder="MM" name="expiration_month" /><input class="form-control" type="text" placeholder="YY" name="expiration_year" /></div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="mb-3"><label class="form-label" for="card_number">Card Number</label><input id="card_number" class="form-control" type="text" placeholder="Card Number" name="card_number" /></div>
+            </div>
+            <div class="col-sm-4">
+                <div class="mb-3"><label class="form-label" for="cvc">CVC</label><input id="cvc" class="form-control" type="text" placeholder="CVC" name="cvc" /></div>
+            </div>
+            <div class="col-sm-12">
+                <div class="mb-3"><button class="btn btn-outline-danger d-block w-100" type="submit">Proceed</button></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer th:insert="fragments/footer.html"/>
+</body>
+</html>
