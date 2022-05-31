@@ -38,10 +38,10 @@
             </table>
             <hr/>
         <ul class="nav" style="margin-left: 75%; margin-top: 1%;">
-            <li class="nav-item" style="margin-right: 0.2%">
+            <li class="nav-item" style="margin-right: 1%">
                 <a href="/catalog/cart/clean"><button th:if="${not #lists.isEmpty(cart)}" class="btn btn-danger">Очистить корзину</button></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style="margin-left: 1%">
                 <button th:if="${not #lists.isEmpty(cart)}" type="submit" th:onclick="location.href='/catalog/cart/placeOrder'" class="btn btn-danger">Оформить заказ</button>
             </li>
         </ul>

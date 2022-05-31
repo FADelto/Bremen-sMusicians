@@ -9,6 +9,7 @@ public class OrderList {
     private Long id;
     private String idOfProducts;
     private String time;
+    private String date;
     private Status status;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -18,10 +19,12 @@ public class OrderList {
     public OrderList() {
     }
 
-    public OrderList(User user, String idOfProducts, String time,Status status) {
+    public OrderList(User user, String idOfProducts, String time, String date, Status status) {
         this.author = user;
         this.idOfProducts = idOfProducts;
+
         this.time = time;
+        this.date = date;
         this.status = status;
     }
 
@@ -61,6 +64,14 @@ public class OrderList {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public Status getStatus() {

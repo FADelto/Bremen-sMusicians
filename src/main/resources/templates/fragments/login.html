@@ -1,20 +1,21 @@
 <div th:fragment="login">
-            <form th:action="@{/login}" method="post">
+            <form th:action="@{/login}" method="post" style="width: 200px;">
                 <div th:if="${param.error}">
                     <div class="alert alert-danger">Invalid username or
                         password.</div>
                 </div>
-                <div class = "form-group">
-                    <input type="text" class = "form-control" id ="username" name = "username" placeholder="Никнейм" autofocus="autofocus">
+                <h6 style="margin-left: 10% ; margin-top: 1%">Логин</h6>
+                <div class = "form-group" style="margin-left: 10%; margin-right: 10%;">
+                    <input type="text" class = "form-control" id ="username" name = "username" placeholder="Логин" autofocus="autofocus">
                 </div>
-
-                <div class="form-group">
+                <h6 style="margin-left: 10%; margin-top: 1%">Пароль</h6>
+                <div class="form-group" style="margin-left: 10%; margin-right: 10%;">
                     <input type="password" id="password" name="password" class="form-control" placeholder="Пароль" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" style="margin-left: 10%; margin-right: 10%; margin-top: 8%">
                             <input type="submit" name="login-submit" id="login-submit"
-                                   class="form-control btn btn-primary" value="Войти" />
+                                   class="form-control btn btn-danger" value="Войти" />
                 </div>
             </form>
 </div>

@@ -2,9 +2,11 @@ package com.example.QuietMelody.controller;
 
         import com.example.QuietMelody.domain.Cart;
         import com.example.QuietMelody.domain.Catalog;
+        import com.example.QuietMelody.domain.OrderList;
         import com.example.QuietMelody.domain.User;
         import com.example.QuietMelody.repos.CartRepo;
         import com.example.QuietMelody.repos.CatalogRepo;
+        import com.example.QuietMelody.repos.OrderListRepo;
         import com.example.QuietMelody.service.CartService;
         import com.example.QuietMelody.service.CatalogService;
         import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +16,16 @@ package com.example.QuietMelody.controller;
         import org.springframework.ui.Model;
         import org.springframework.web.bind.annotation.*;
 
+
         import java.security.Principal;
         import java.util.ArrayList;
         import java.util.List;
         import java.util.Optional;
         import java.util.Vector;
+        import java.text.SimpleDateFormat;
+        import java.util.Date;
+
+        import static com.example.QuietMelody.domain.Status.INPROCESSING;
 
 /*!
     \brief Контроллер, используемый для перехода между страницами
@@ -36,6 +43,8 @@ public class CatalogController {
     private CartService cartService;
     @Autowired
     private CartRepo cartRepo;
+    @Autowired
+    private OrderListRepo orderListRepo;
 
     @GetMapping
     public String catalog(Model model, @RequestParam(defaultValue = "0") int page)
@@ -137,7 +146,25 @@ public class CatalogController {
     }
     @GetMapping("/cart/placeOrder")
     public String placeOrder(@AuthenticationPrincipal User user) {
-
+        List<Cart> cleanList = cartRepo.findAll();
+        OrderList order = new OrderList();
+        String idOfProductsbuf = "";
+        order.setStatus(INPROCESSING);
+        order.setAuthor(user);
+        SimpleDateFormat formatertime = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat formaterdate = new SimpleDateFormat("dd.MM.yyyy");
+        Date date = new Date();
+        order.setTime(formatertime.format((date)));
+        order.setDate(formaterdate.format((date)));
+        for(Cart cart : cleanList){
+            if(cart.getUser_id() == user.getId()){
+                idOfProductsbuf += cart.getProduct_id();
+                idOfProductsbuf += "|";
+                order.setIdOfProducts(idOfProductsbuf);
+                cartRepo.deleteById(cart.getId());
+            }
+        }
+        orderListRepo.save(order);
         return "payment";
     }
 }
