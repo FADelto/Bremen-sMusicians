@@ -37,7 +37,9 @@ public class OrderList {
     public User getAuthor() {
         return author;
     }
-
+    public String getAuthorPhone(){
+        return author.getPhone();
+    }
     public void setAuthor(User author) {
         this.author = author;
     }

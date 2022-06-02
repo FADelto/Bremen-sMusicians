@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Добавление предмета в каталог</title>
+    <div th:insert="fragments/imports.html"/>
+</head>
+<body>
+<header th:insert="fragments/navbar.html" id="header"></header>
+<br>
+<br>
+<!-- Create HTML registration form -->
+<div class="container" style="margin-left: 30%; min-height: 600px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <h1 style="color: #dc3545">Добавление предмета в каталог</h1>
+
+            <form th:action="@{/catalog/add}" method="post" th:object="${catalog}">
+
+                <div class="form-group">
+                    <label class="control-label" for="name"> Название </label>
+                    <input id="name" class="form-control" th:field="*{name}"
+                           required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="description"> Описание </label>
+                    <input id="description" class="form-control" th:field="*{description}"
+                           required autofocus="autofocus" />
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label" for="img_url"> Ссылка на картинку </label>
+                    <input id="img_url" class="form-control" th:field="*{imgUrl}"
+                           required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="price"> Цена </label>
+                    <input id="price" class="form-control" th:field="*{price}"
+                           required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group" style="text-align: end; margin-top: 3%">
+                    <button type="submit" class="btn btn-danger">Добавить</button><br>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:insert="fragments/footer.html"></footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Каталог</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <div th:insert="fragments/imports.html"/>
+</head>
+
+<body>
+    <header th:insert="fragments/navbar.html" id="header"></header>
+    <h1 style="margin-left: 8%; margin-top: 1%; color: #dc3545">Список заказов</h1>
+        <div style="margin-left: 9%; margin-right: 13%; min-height: 600px">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>id заказа</th>
+                    <th>id заказанных продуктов</th>
+                    <th>Время и дата заказа</th>
+                    <th>Имя заказчика</th>
+                    <th>Номер телефона заказчика</th>
+                </tr>
+                </thead>
+                <tbody class="align-middle">
+                <tr th:each="order : ${orderList}">
+                    <td th:text="${order.id}"></td>
+                    <td th:text="${order.idOfProducts}"></td>
+                    <td th:text="${order.time} + ' ' + ${order.date}"></td>
+                    <td th:text="${order.author.firstName}"></td>
+                    <td th:text="${order.author.phone}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <hr/>
+        </div>
+
+    <footer th:insert="fragments/footer.html"/>
+</body>
+</html>

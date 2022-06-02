@@ -1,9 +1,6 @@
 package com.example.QuietMelody.controller;
 
-        import com.example.QuietMelody.domain.Cart;
-        import com.example.QuietMelody.domain.Catalog;
-        import com.example.QuietMelody.domain.OrderList;
-        import com.example.QuietMelody.domain.User;
+        import com.example.QuietMelody.domain.*;
         import com.example.QuietMelody.repos.CartRepo;
         import com.example.QuietMelody.repos.CatalogRepo;
         import com.example.QuietMelody.repos.OrderListRepo;
@@ -11,6 +8,7 @@ package com.example.QuietMelody.controller;
         import com.example.QuietMelody.service.CatalogService;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.data.domain.PageRequest;
+        import org.springframework.security.access.prepost.PreAuthorize;
         import org.springframework.security.core.annotation.AuthenticationPrincipal;
         import org.springframework.stereotype.Controller;
         import org.springframework.ui.Model;
@@ -18,12 +16,8 @@ package com.example.QuietMelody.controller;
 
 
         import java.security.Principal;
-        import java.util.ArrayList;
-        import java.util.List;
-        import java.util.Optional;
-        import java.util.Vector;
+        import java.util.*;
         import java.text.SimpleDateFormat;
-        import java.util.Date;
 
         import static com.example.QuietMelody.domain.Status.INPROCESSING;
 
@@ -70,10 +64,18 @@ public class CatalogController {
         return "catalog";
     }
     @GetMapping("/add")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String addItemToCatalog(Model model)
     {
-        model.addAttribute("products", catalogRepo.findAll());
-        return "catalog";
+        model.addAttribute("catalog", new Catalog());
+        return "addItem";
+    }
+    @PostMapping("/add")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public String addItem(@ModelAttribute("catalog") Catalog item) /// Метод для создания нового пользователя в базе данных
+    {
+        catalogRepo.save(item);
+        return "redirect:/catalog";
     }
 
     @GetMapping("{product_id}")

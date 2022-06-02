@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <title>Каталог</title>
     <meta charset="UTF-8">
@@ -21,7 +21,8 @@
             <a href="/catalog/descendingprice" class="btn btn-danger"> По убыванию цены</a>
         </li>
     </ul>
-        <div style="margin-left: 9%; margin-right: 13%; min-height: 600px">
+    <a sec:authorize-url="/catalog/add" href="/catalog/add" class="btn btn-danger" style="margin-left: 9%;">Добавить товар</a>
+    <div style="margin-left: 9%; margin-right: 13%; min-height: 600px">
             <table class="table table-hover">
                 <thead>
                 <tr>
